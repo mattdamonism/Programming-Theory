@@ -7,7 +7,14 @@ public class APIClient
 {
     private const string url = "https://catfact.ninja/fact";
 
-      public static string GetCatFact()
+    private static CatFact catFact;
+
+    public static CatFact GetCatFact()
+    {
+        return catFact;
+    }
+
+    public static void FetchFact()
     {
         Debug.Log("Getting cat fact");
         HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
@@ -15,13 +22,13 @@ public class APIClient
         StreamReader reader = new StreamReader(response.GetResponseStream());
         string jsonResponse = reader.ReadToEnd();
         CatFact fact = JsonUtility.FromJson<CatFact>(jsonResponse);
-        return fact.fact;
+        catFact = fact;
     }
 
     [Serializable]
-    class CatFact
+    public class CatFact
     {
         public string fact;
-        public int length;
+        public int lenght;
     }
 }

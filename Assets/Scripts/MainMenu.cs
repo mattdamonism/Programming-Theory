@@ -33,6 +33,7 @@ public class MainMenu : MonoBehaviour
             inputInitialX = inputName.transform.position.x;
             shakeInput = true;
         }
+
     }
 
     private bool shakeInput = false;
