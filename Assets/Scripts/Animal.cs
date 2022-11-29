@@ -63,4 +63,21 @@ public abstract class Animal : MonoBehaviour
             canJump = true;
         }
     }
+
+    public void Stop()
+    {
+        anim.SetInteger("Walk", 0);
+    }
+
+    private void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            PlayerControl.Instance.SelectAnimal(this);
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            PlayerControl.Instance.RenameAnimal(this);
+        }
+    }
 }

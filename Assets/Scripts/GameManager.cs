@@ -5,8 +5,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    public Animal SelectedAnimal { get; set; }
-    public string ZooID;
 
     private void Awake()
     {
@@ -17,15 +15,5 @@ public class GameManager : MonoBehaviour
         } 
         Instance = this;
         DontDestroyOnLoad(Instance);
-    }
-
-    public void SetZooID(string zooId)
-    {
-        ZooID = zooId;
-    }
-
-    public string GetZooID()
-    {
-        return ZooID;
     }
 }
