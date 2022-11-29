@@ -15,5 +15,6 @@ public class Cat : Animal
     {
         base.Start();
         movementSpeed = 5;
+        Debug.Log(APIClient.GetCatFact());
     }
 }
