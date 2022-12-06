@@ -23,6 +23,7 @@ public abstract class Animal : MonoBehaviour
     {
     }
 
+    //ABSTRACTION
     public void Move()
     {
         float moveHorizontal = Input.GetAxisRaw("Horizontal");
@@ -47,7 +48,7 @@ public abstract class Animal : MonoBehaviour
             Jump();
         }
     }
-
+    
     public virtual void Jump()
     {
         rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
